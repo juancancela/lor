@@ -1,0 +1,22 @@
+{
+  "name": "lor",
+  "version": "1.0.0",
+  "description": "lor game",
+  "main": "lor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://juancancela@github.com/juancancela/lor.git"
+  },
+  "keywords": [
+    "lor"
+  ],
+  "author": "Juan Carlos Cancela <cancela.juancarlos@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juancancela/lor/issues"
+  },
+  "homepage": "https://github.com/juancancela/lor"
+}
