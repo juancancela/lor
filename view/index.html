@@ -1,0 +1,7 @@
+  <section>
+  <p>controls</p>
+  <% links.forEach(function (link) {%>
+    <a rel="<%= link.rel %>" href="<%= link.url %>"><%= link.rel %></a>
+    <br/>
+  <% })%>
+  </section>

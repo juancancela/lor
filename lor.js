@@ -1,9 +1,11 @@
 var koa = require('koa');
 var route = require('koa-route');
 var app = koa();
+var render = require('koa-ejs');
+var path = require('path');
+var serve = require('koa-static-folder');
 
 // x-response-time
-
 app.use(function *(next){
   var start = new Date;
   yield next;
@@ -12,7 +14,6 @@ app.use(function *(next){
 });
 
 // logger
-
 app.use(function *(next){
   var start = new Date;
   yield next;
@@ -20,19 +21,30 @@ app.use(function *(next){
   console.log('%s %s - %s', this.method, this.url, ms);
 });
 
+
+// Template engine
+render(app, {
+  root: path.join(__dirname, 'view'),
+  layout: 'template',
+  viewExt: 'html',
+  cache: false,
+  debug: true
+});
+
+app.use(serve('./asset'));
 app.use(route.get('/', index));
 app.use(route.get('/rules', rules));
 app.use(route.get('/game', game));
 
 function *index(){
-  this.body = {
-    "description" : "Welcome to LoR game!",
-    "_links":{
-      "self": this.request.href,
-      "rules": `${this.request.origin}/rules`,
-      "game": `${this.request.origin}/game`,
-    }
-  };
+  var links = [
+      {"rel":"rules","url":`${this.request.origin}/rules`},
+      {"rel":"game","url":`${this.request.origin}/game`},
+      {"rel":"self","url":this.request.href}
+  ]
+  yield this.render('index',{
+      links : links
+  });
 }
 
 function *rules(){
