@@ -4,6 +4,8 @@ var app = koa();
 var render = require('koa-ejs');
 var path = require('path');
 var serve = require('koa-static-folder');
+var Index = require('./resource/Index').Index;
+var index = new Index();
 
 // x-response-time
 app.use(function *(next){
@@ -32,27 +34,30 @@ render(app, {
 });
 
 app.use(serve('./asset'));
-app.use(route.get('/', index));
+app.use(route.get('/', index.render));
 app.use(route.get('/rules', rules));
 app.use(route.get('/game', game));
 
-function *index(){
-  var links = [
-      {"rel":"rules","url":`${this.request.origin}/rules`},
-      {"rel":"game","url":`${this.request.origin}/game`},
-      {"rel":"self","url":this.request.href}
-  ]
-  yield this.render('index',{
-      links : links
+function *rules(){
+  var self = this;  
+  var _controls = function(){
+      return [];
+  }
+  
+  yield this.render('rules',{
+      controls : _controls(self)
   });
 }
 
-function *rules(){
-  this.body = "TBD";
-}
-
 function *game(){
-  this.body = "TBI";
+  var self = this;
+  var _controls = function(){
+      return [];
+  }
+  
+  yield this.render('game',{
+      controls : _controls(self)
+  });
 }
 
 app.listen(3000);
