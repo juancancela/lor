@@ -6,12 +6,8 @@
   <body>
     <h3>lor</h3>
     <%- body %>
-    
     <% controls.forEach(function (control) {%>
-      <% if(control.type === "a") {%>
-        <a rel="<%= control.rel %>" href="<%= control.url %>"><%= control.rel %></a>
-        <br/>
-      <% } %>  
+      <%- control %>
     <% })%>
   </body>
 </html>
