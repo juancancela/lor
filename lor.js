@@ -4,7 +4,7 @@ var app = koa();
 var render = require('koa-ejs');
 var path = require('path');
 var serve = require('koa-static-folder');
-var Index = require('./resource/Index').Index;
+var Index = require('./states/Index').Index;
 var index = new Index();
 
 // x-response-time
