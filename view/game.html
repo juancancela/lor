@@ -1,1 +1,11 @@
-<p>TBD</p>
+<ul>
+<p>cards</p>
+<% cards.forEach(function (card) {%>
+  <li>Name: <%- card.name %> | <%- card.year %></li>
+<% })%>
+
+<p>players</p>
+<% players.forEach(function (player) {%>
+  <li>Name: <%- player.name %></li>
+<% })%>
+</ul>

@@ -38,7 +38,7 @@ class LinkFactory {
         return inputParametersString; 
         }
         
-        return `\n\t<div class="${rel}">\n\t\t<form action="${action}">\n\t${_inputParameters(inputParameters)}\n\t\t\t<input type="submit" value="${rel}">\n\t\t</form>\n\t</div>`    
+        return `\n\t<div class="${rel}">\n\t\t<form action="${action}" method="${method}">\n\t${_inputParameters(inputParameters)}\n\t\t\t<input type="submit" value="${rel}">\n\t\t</form>\n\t</div>`    
     }
 }
 

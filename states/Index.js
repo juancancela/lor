@@ -2,14 +2,17 @@
 
 var LinkFactory = require('../utils/LinkFactory').LinkFactory;
 var lf = new LinkFactory();
-var gameParameters = [{"name":"players", "placeholder":"Number of Players (1 to 6)", "type":"text", "required":true}];
+var players = [{"name":"player1", "placeholder":"Player Name", "type":"text", "required":false},
+{"name":"player2", "placeholder":"Player Name", "type":"text", "required":false},
+{"name":"player3", "placeholder":"Player Name", "type":"text", "required":false},
+{"name":"player4", "placeholder":"Player Name", "type":"text", "required":false}];
 
 class Index {
     *render(ctx){
       yield this.render("index",{
         controls : [
             lf.a("rules", "rules", this),
-            lf.form(gameParameters, "test.js", "post", "create game"),
+            lf.form(players, "game", "post", "create game"),
             lf.a("self", null, this)
         ]
       });
