@@ -1,9 +1,15 @@
 "use strict";
 
+var uuid = require('node-uuid');
+var CardFactory = require('../utils/CardFactory').CardFactory;
+var cardFactory = new CardFactory();
+
+const DEFAULT_AMOUNT_OF_CARDS = 5;
+
 class Game {
-    constructor(players, controls){
-        this._id = "1234";
-        this._cards = [{"name":"revolucion de mayo", "year":1810},{"name":"revolucion de mayo2", "year":1812}];
+    constructor(players, controls, amountOfCards){
+        this._id = uuid.v4();
+        this._cards = cardFactory.getCards(amountOfCards || DEFAULT_AMOUNT_OF_CARDS);
         this._players = players;
         this._controls = controls;
     }

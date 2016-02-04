@@ -6,6 +6,8 @@ var games = {};
 var LinkFactory = require('../utils/LinkFactory').LinkFactory;
 var lf = new LinkFactory();
 
+var Player = require('../states/Player').Player;
+
 class GameProxy {
 
     *retrieve(){
@@ -23,8 +25,9 @@ class GameProxy {
             lf.a("self", null, this)
         ];
         var players = [];
-        Object.keys(this.request.body).forEach(function(playerName){
-          players.push(playerName)
+        var body = this.request.body;
+        Object.keys(body).forEach(function(name){
+          players.push(new Player(body[name], 0, null));
         }); 
         
         var game = new Game(players, controls);

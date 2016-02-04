@@ -4,10 +4,16 @@
     <title>lor</title>
   </head>
   <body>
-    <h3>lor</h3>
     <%- body %>
-    <% controls.forEach(function (control) {%>
-      <%- control %>
-    <% })%>
+    <br/>
+    <br/>
+    <table>
+      <caption>controls</caption>  
+      <% controls.forEach(function (control) {%>
+      <tr>
+        <td><%- control %></td>    
+      </tr>
+      <% })%>  
+    </table>
   </body>
 </html>

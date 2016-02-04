@@ -1,3 +1,21 @@
 body {
     background-color: steelblue;
 }
+table {
+    border-collapse: collapse;
+}
+table, th, td, caption {
+    border: 1px solid black;
+}
+table {
+    width: 50%;
+}
+
+th {
+    height: 50px;
+    text-transform: uppercase;
+}
+
+caption {
+    text-transform: uppercase;
+}

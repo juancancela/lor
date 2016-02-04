@@ -1,11 +1,32 @@
-<ul>
-<p>cards</p>
-<% cards.forEach(function (card) {%>
-  <li>Name: <%- card.name %> | <%- card.year %></li>
-<% })%>
+<table>
+    <caption>cards</caption>
+    <tr>
+      <th>Name</th>
+      <th>Year</th> 
+    </tr>
 
-<p>players</p>
-<% players.forEach(function (player) {%>
-  <li>Name: <%- player.name %></li>
-<% })%>
-</ul>
+      <% cards.forEach(function (card) {%>
+      <tr>
+        <td><%- card.name %></td>
+        <td><%- card.year %></td>
+      </tr>  
+      <% })%>
+</table>
+<br/>
+<br/>
+<table>
+    <caption>players</caption>
+    <tr>
+      <th>name</th>
+      <th>year</th>
+      <th>status</th> 
+    </tr>
+
+      <% players.forEach(function (player) {%>
+      <tr>
+        <td><%- player.name %></td>
+        <td><%- player.score %></td>
+        <td><%- player.status %></td>
+      </tr>  
+      <% })%>
+</table>
