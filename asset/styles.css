@@ -8,7 +8,7 @@ table, th, td, caption {
     border: 1px solid black;
 }
 table {
-    width: 50%;
+    width: 100%;
 }
 
 th {

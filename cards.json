@@ -3,51 +3,127 @@
         {
             "name": "revolucion de mayo",
             "description": "la revo",
+            "image": "revolucion.jpg", 
             "year": 1810
         },
         {
             "name": "revolucion de mayo2",
             "description": "la revo2",
+            "image": "revolucion.jpg", 
             "year": 1812
         },
         {
             "name": "revolucion de mayo3",
             "description": "la revo3",
+            "image": "revolucion.jpg", 
             "year": 1812
         },
         {
             "name": "revolucion de mayo4",
             "description": "la revo4",
+            "image": "revolucion.jpg", 
             "year": 1812
         },
         {
             "name": "revolucion de mayo5",
             "description": "la revo5",
+            "image": "revolucion.jpg", 
             "year": 1812
         },
         {
             "name": "revolucion de mayo6",
             "description": "la revo6",
+            "image": "revolucion.jpg", 
             "year": 1812
         },
         {
             "name": "revolucion de mayo7",
             "description": "la revo7",
+            "image": "revolucion.jpg", 
             "year": 1812
         },
         {
             "name": "revolucion de mayo8",
             "description": "la revo8",
+            "image": "revolucion.jpg", 
             "year": 1812
         },
         {
             "name": "revolucion de mayo9",
             "description": "la revo9",
+            "image": "revolucion.jpg", 
             "year": 1812
         },
         {
             "name": "revolucion de mayo10",
             "description": "la revo10",
+            "image": "revolucion.jpg", 
+            "year": 1812
+        },
+        {
+            "name": "revolucion de mayo11",
+            "description": "la revo11",
+            "image": "revolucion.jpg", 
+            "year": 1812
+        },
+        {
+            "name": "revolucion de mayo12",
+            "description": "la revo12",
+            "image": "revolucion.jpg", 
+            "year": 1812
+        },
+        {
+            "name": "revolucion de mayo13",
+            "description": "la revo13",
+            "image": "revolucion.jpg", 
+            "year": 1812
+        },
+        {
+            "name": "revolucion de mayo14",
+            "description": "la revo14",
+            "image": "revolucion.jpg", 
+            "year": 1812
+        },
+        {
+            "name": "revolucion de mayo15",
+            "description": "la revo15",
+            "image": "revolucion.jpg", 
+            "year": 1812
+        },
+        {
+            "name": "revolucion de mayo16",
+            "description": "la revo16",
+            "image": "revolucion.jpg", 
+            "year": 1812
+        },
+        {
+            "name": "revolucion de mayo17",
+            "description": "la revo17",
+            "image": "revolucion.jpg", 
+            "year": 1812
+        },
+        {
+            "name": "revolucion de mayo18",
+            "description": "la revo18",
+            "image": "revolucion.jpg", 
+            "year": 1812
+        },
+        {
+            "name": "revolucion de mayo19",
+            "description": "la revo19",
+            "image": "revolucion.jpg", 
+            "year": 1812
+        },
+        {
+            "name": "revolucion de mayo19",
+            "description": "la revo19",
+            "image": "revolucion.jpg", 
+            "year": 1812
+        },
+        {
+            "name": "revolucion de mayo20",
+            "description": "la revo20",
+            "image": "revolucion.jpg", 
             "year": 1812
         }
     ]

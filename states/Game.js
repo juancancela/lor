@@ -1,17 +1,24 @@
 "use strict";
 
-var uuid = require('node-uuid');
 var CardFactory = require('../utils/CardFactory').CardFactory;
 var cardFactory = new CardFactory();
+var LinkFactory = require('../utils/LinkFactory').LinkFactory;
+var lf = new LinkFactory();
 
 const DEFAULT_AMOUNT_OF_CARDS = 5;
 
 class Game {
-    constructor(players, controls, amountOfCards){
-        this._id = uuid.v4();
+    constructor(players, controls, amountOfCards, id){
+        var self = this;
+        this._id = id;
         this._cards = cardFactory.getCards(amountOfCards || DEFAULT_AMOUNT_OF_CARDS);
-        this._players = players;
+        this._players = players;        
         this._controls = controls;
+        this._currentPlayer = players[0];
+        
+        players.forEach(function(player){
+           player.addCard(self._cards.pop()); 
+        });
     }
     
     get players(){
@@ -36,6 +43,14 @@ class Game {
     
     set controls(value) {
         this.controls = value;
+    }
+    
+    get currentPlayer() {
+        return this._currentPlayer;
+    }
+    
+    set currentPlayer(value) {
+        this._currentPlayer = value;
     }
     
     get id(){

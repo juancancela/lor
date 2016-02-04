@@ -2,13 +2,14 @@
     <caption>cards</caption>
     <tr>
       <th>Name</th>
-      <th>Year</th> 
+      <th>Description</th>
+      <th>Image</th>
     </tr>
-
-      <% cards.forEach(function (card) {%>
+      <% game.cards.forEach(function (card) {%>
       <tr>
         <td><%- card.name %></td>
-        <td><%- card.year %></td>
+        <td><%- card.description %></td>
+        <td><img src="../asset/images/<%- card.image %>"</img></td>
       </tr>  
       <% })%>
 </table>
@@ -18,11 +19,10 @@
     <caption>players</caption>
     <tr>
       <th>name</th>
-      <th>year</th>
+      <th>score</th>
       <th>status</th> 
     </tr>
-
-      <% players.forEach(function (player) {%>
+      <% game.players.forEach(function (player) {%>
       <tr>
         <td><%- player.name %></td>
         <td><%- player.score %></td>

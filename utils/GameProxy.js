@@ -8,6 +8,8 @@ var lf = new LinkFactory();
 
 var Player = require('../states/Player').Player;
 
+var uuid = require('node-uuid');
+
 class GameProxy {
 
     *retrieve(){
@@ -15,22 +17,20 @@ class GameProxy {
        var game = games[gameId];
        yield this.render("game",{
                 controls : game.controls,
-                cards: game.cards,
-                players : game.players
+                game: game
             });  
     }
     
     *create(){
-        var controls = [
-            lf.a("self", null, this)
-        ];
+        var gameId = uuid.v4();
+        var controls = [lf.a("self", `game/${gameId}`, this)];
         var players = [];
         var body = this.request.body;
         Object.keys(body).forEach(function(name){
-          players.push(new Player(body[name], 0, null));
+          players.push(new Player(body[name], 0, null, null));
         }); 
         
-        var game = new Game(players, controls);
+        var game = new Game(players, controls, 10, gameId);
         games[game.id] = game;
         this.redirect(`/game/${game.id}`);
         
