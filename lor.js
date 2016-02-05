@@ -36,7 +36,7 @@ app.use(function *(next){
   console.log('%s %s - %s', this.method, this.url, ms);
 });
 
-// Template engine
+// Template engine for views
 render(app, {
   root: path.join(__dirname, 'view'),
   layout: 'template',
@@ -50,5 +50,6 @@ app.use(route.get('/', index.render));
 app.use(route.get('/rules', rules.render));
 app.use(route.get('/game/:id', gameProxy.retrieve));
 app.use(route.post('/game', gameProxy.create));
+
 
 app.listen(3000);
