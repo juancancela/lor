@@ -7,6 +7,7 @@ var bodyParser = require('koa-bodyparser');
 var render = require('koa-ejs');
 var path = require('path');
 var serve = require('koa-static-folder');
+var utils = require('./utils/Utilities');
 
 var Index = require('./states/Index').Index;
 var index = new Index();
@@ -18,23 +19,8 @@ var Rules = require('./states/Rules').Rules;
 var rules = new Rules();
 
 app.use(bodyParser());
-
-
-// x-response-time
-app.use(function *(next){
-  var start = new Date;
-  yield next;
-  var ms = new Date - start;
-  this.set('X-Response-Time', ms + 'ms');
-});
-
-// logger
-app.use(function *(next){
-  var start = new Date;
-  yield next;
-  var ms = new Date - start;
-  console.log('%s %s - %s', this.method, this.url, ms);
-});
+app.use(utils.responseTime);
+app.use(utils.logger);
 
 // Template engine for views
 render(app, {

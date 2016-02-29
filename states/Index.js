@@ -2,7 +2,7 @@
 
 var LinkFactory = require('../utils/LinkFactory').LinkFactory;
 var lf = new LinkFactory();
-var players = [{"name":"player1", "placeholder":"Player Name", "type":"text", "required":false},
+var players = [{"name":"player1", "placeholder":"Player Name", "type":"text", "required":true},
 {"name":"player2", "placeholder":"Player Name", "type":"text", "required":false},
 {"name":"player3", "placeholder":"Player Name", "type":"text", "required":false},
 {"name":"player4", "placeholder":"Player Name", "type":"text", "required":false}];
