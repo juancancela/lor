@@ -1,12 +1,13 @@
 "use strict";
 
 const PLAYER_INITIAL_SCORE = 0;
+const PLAYER_INITIAL_STATUS = "PLAYING";
 
 class Player {
     constructor(name){
         this._name = name;
         this._score = PLAYER_INITIAL_SCORE;
-        this._status = status;
+        this._status = PLAYER_INITIAL_STATUS;
         this._cards = null;
     }
     

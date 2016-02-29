@@ -36,6 +36,8 @@ app.use(route.get('/', index.render));
 app.use(route.get('/rules', rules.render));
 app.use(route.get('/game/:id', gameProxy.retrieve));
 app.use(route.post('/game', gameProxy.create));
+app.use(route.post('/game/:id/play', gameProxy.play));
+
 
 
 app.listen(3000);

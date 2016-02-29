@@ -16,6 +16,16 @@
 <br/>
 <br/>
 <table>
+    <caption>selected cards</caption>
+    <% game.selectedCards.forEach(function (card) {%>
+    <tr>
+      <td><%- card.name %></td>
+      <td><%- card.description %></td>
+       <td><img src="../asset/images/<%- card.image %>"</img></td>
+    </tr>  
+    <% })%>
+</table>
+<table>
     <caption>players</caption>
     <tr>
       <th>name</th>

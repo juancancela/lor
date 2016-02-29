@@ -1,6 +1,6 @@
 "use strict";
 
-const DEFAULT_CARDS_PATH = '../cards.json'; 
+const DEFAULT_CARDS_PATH = '../cards.json';
 
 class CardFactory {
     constructor(cardsPath){

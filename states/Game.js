@@ -1,24 +1,13 @@
 "use strict";
 
-var CardFactory = require('../utils/CardFactory').CardFactory;
-var cardFactory = new CardFactory();
-var LinkFactory = require('../utils/LinkFactory').LinkFactory;
-var lf = new LinkFactory();
-
-const DEFAULT_AMOUNT_OF_CARDS = 5;
-
 class Game {
-    constructor(players, controls, amountOfCards, id){
-        var self = this;
+    constructor(players, controls, cards, id){
         this._id = id;
-        this._cards = cardFactory.getCards(amountOfCards || DEFAULT_AMOUNT_OF_CARDS);
+        this._cards = cards;
+        this._selectedCards = [this._cards.shift()];
         this._players = players;        
         this._controls = controls;
         this._currentPlayer = players[0];
-        
-        players.forEach(function(player){
-           player.addCard(self._cards.pop()); 
-        });
     }
     
     get players(){
@@ -59,6 +48,29 @@ class Game {
     
     set id(value){
         this._id = value;
+    }
+    
+    get selectedCards(){
+        return this._selectedCards;
+    }
+    
+    set selectedCards(value){
+        this._selectedCards = value;
+    }
+    
+    addSelectedCard(selectedCard){
+        if(!this._selectedCards) this._selectedCards = [];
+        this._selectedCards.push(selectedCard);
+    }
+    
+    addControl(control) {
+        this._controls.push(control);
+    }
+    
+    removeControl(control) {
+        this._controls.forEach(function(currentControl){
+           if(currentControl.name == control.name) this._controls.pop(currentControl); 
+        });
     }
 }
 
